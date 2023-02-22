@@ -1,16 +1,34 @@
 # Weather.
 
-A new Flutter project.
+The Weather application, spelled out on clean architecture.
 
-## Getting Started.
+## The basic layers in a clean architecture.
 
-This project is a starting point for a Flutter application.
+## Presentation Layer:
 
-A few resources to get you started if this is your first Flutter project:
+```
+This layer handles user input, and displays data on the screen. It should
+not depend on other layers, and should provide an interface to interact with the user.
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab).
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook).
+## Application Layer:
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+```
+This layer contains the business logic, and manages all interactions between the layers. It depends
+on the view layer, but is independent of the other layers.
+```
+
+## Domain Layer:
+
+```
+This layer contains the underlying business logic, and data models that are used by the application.
+It should not depend on the lower layers,
+and should be independent of frameworks and libraries.
+```
+
+## Infrastructure Layer:
+
+```
+This layer contains the implementation of infrastructure, such as databases, network services,
+caching, etc. It depends on the domain layer, but should not depend on other layers.
+```
