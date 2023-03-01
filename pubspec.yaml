@@ -14,9 +14,11 @@ dependencies:
 
   cupertino_icons: ^1.0.2
   equatable: ^2.0.5
-  flutter_hooks: ^0.18.6
   flutter_riverpod: ^2.2.0
-  material_floating_search_bar: ^0.3.7
+  material_floating_search_bar:
+    git:
+      url: https://github.com/Lacerte/material_floating_search_bar.git
+      ref: 07b2980ad304dacaa5688e56483adcec36fb08ab
   riverpod: ^2.2.0
   shared_preferences: ^2.0.17
   font_awesome_flutter: ^10.4.0
@@ -30,6 +32,7 @@ dependencies:
   connectivity_plus: 2.3.0
   collection: 1.16.0
   http: 0.13.4
+  hooks_riverpod: ^2.2.0
 
 dev_dependencies:
   flutter_test:

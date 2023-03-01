@@ -1,11 +1,8 @@
-import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
-
-import 'functions.dart';
+import 'index.dart';
 
 @sealed
 abstract class Either<L, R> extends Equatable {
-  const Either._();
+  const Either();
 
   T fold<T>(T Function(L) left, T Function(R) right);
 
@@ -14,9 +11,9 @@ abstract class Either<L, R> extends Equatable {
         (right) => Right(f(right)),
       );
 
-  bool all(bool Function(R) f) => fold((left) => false, f);
-
   R getOrElse(R Function() orElse) => fold((left) => orElse(), id);
+
+  bool all(bool Function(R) f) => fold((left) => false, f);
 
   Either<L, R2> bind<R2>(Either<L, R2> Function(R) f) => fold(Left.new, f);
 
@@ -25,7 +22,7 @@ abstract class Either<L, R> extends Equatable {
 }
 
 class Left<L, R> extends Either<L, R> {
-  const Left(this.value) : super._();
+  const Left(this.value) : super();
 
   final L value;
 
@@ -37,7 +34,7 @@ class Left<L, R> extends Either<L, R> {
 }
 
 class Right<L, R> extends Either<L, R> {
-  const Right(this.value) : super._();
+  const Right(this.value) : super();
 
   final R value;
 

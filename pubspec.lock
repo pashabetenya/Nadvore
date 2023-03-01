@@ -259,7 +259,7 @@ packages:
     source: sdk
     version: "0.0.0"
   flutter_hooks:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: flutter_hooks
       url: "https://pub.dartlang.org"
@@ -333,6 +333,13 @@ packages:
     dependency: transitive
     description:
       name: graphs
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.2.0"
+  hooks_riverpod:
+    dependency: "direct main"
+    description:
+      name: hooks_riverpod
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.2.0"
@@ -423,10 +430,12 @@ packages:
   material_floating_search_bar:
     dependency: "direct main"
     description:
-      name: material_floating_search_bar
-      url: "https://pub.dartlang.org"
-    source: hosted
-    version: "0.3.7"
+      path: "."
+      ref: "07b2980ad304dacaa5688e56483adcec36fb08ab"
+      resolved-ref: "07b2980ad304dacaa5688e56483adcec36fb08ab"
+      url: "https://github.com/Lacerte/material_floating_search_bar.git"
+    source: git
+    version: "0.3.4"
   meta:
     dependency: "direct main"
     description:

@@ -1,20 +1,19 @@
-import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
+import 'index.dart';
 
 @sealed
 abstract class Failure extends Equatable {
   const Failure();
 }
 
-class NoConnection extends Failure {
-  const NoConnection();
+class Connection extends Failure {
+  const Connection();
 
   @override
   List<Object?> get props => const [];
 }
 
-class ServerDown extends Failure {
-  const ServerDown();
+class Server extends Failure {
+  const Server();
 
   @override
   List<Object?> get props => const [];
@@ -27,13 +26,13 @@ class FailedToParseResponse extends Failure {
   List<Object?> get props => const [];
 }
 
-class InvalidCityName extends Failure {
-  const InvalidCityName(this.cityName);
+class InvalidCity extends Failure {
+  const InvalidCity(this.city);
 
-  final String cityName;
+  final String city;
 
   @override
-  List<Object?> get props => [cityName];
+  List<Object?> get props => [city];
 }
 
 class InvalidApiKey extends Failure {

@@ -1,10 +1,6 @@
-import 'package:equatable/equatable.dart';
-import 'package:meta/meta.dart';
+import 'index.dart';
 
-import 'either.dart';
-import 'failure.dart';
-
-abstract class UseCase<R, P> {
+abstract class Case<R, P> {
   Future<Either<Failure, R>> call(P params);
 }
 
