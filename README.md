@@ -59,6 +59,24 @@ This layer contains the implementation of infrastructure, such as databases, net
 caching, etc. It depends on the domain layer, but should not depend on other layers.
 ```
 
+### Packages, that were connected:
+
+```
+equatable: ^2.0.5;
+
+riverpod: ^2.2.0;
+shared_preferences: ^2.0.17;
+url_launcher: ^6.1.9;
+
+flutter_svg: ^1.1.6;
+state_notifier: 0.7.2+1;
+
+intl: ^0.17.0;
+
+collection: 1.16.0;
+http: 0.13.4.
+```
+
 ### Review.
 
 <table>
