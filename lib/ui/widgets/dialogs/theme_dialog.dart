@@ -1,31 +1,32 @@
 import 'index.dart';
 
-class DarkThemeDialog extends ConsumerWidget {
+class ThemeDialog extends ConsumerWidget {
   static const dialogOptions = {
-    'Default': DarkThemeModel.grey,
-    'Black': DarkThemeModel.black,
+    'Light': ThemeModel.light,
+    'Dark': ThemeModel.dark,
+    'System Default': ThemeModel.systemDefault,
   };
 
-  const DarkThemeDialog({super.key});
+  const ThemeDialog({super.key});
 
   @override
   Widget build(BuildContext context, WidgetRef ref) {
     final themeStateNotifier = ref.watch(themeStateNotifierProvider.notifier);
-    final darkTheme = ref.watch(
-      themeStateNotifierProvider.select((state) => state.darkTheme),
-    );
+    final theme = ref.watch(themeStateNotifierProvider.select((state) => state.theme));
 
     final radios = [
       for (final entry in dialogOptions.entries)
-        RadioListTile<DarkThemeModel>(
+        RadioListTile<ThemeModel>(
           title: Text(
             entry.key,
             style: TextStyle(color: Theme.of(context).textTheme.subtitle1!.color),
           ),
           value: entry.value,
-          groupValue: darkTheme,
-          onChanged: (newValue) {
-            themeStateNotifier.setDarkTheme(newValue!);
+          groupValue: theme,
+          onChanged: (newValue) async {
+            await themeStateNotifier.setTheme(newValue!);
+
+            // ignore: use_build_context_synchronously
             Navigator.pop(context);
           },
         )
@@ -33,7 +34,7 @@ class DarkThemeDialog extends ConsumerWidget {
 
     return SimpleDialog(
       title: Text(
-        'Dark Theme',
+        'Theme',
         style: TextStyle(color: Theme.of(context).textTheme.subtitle1!.color),
       ),
       children: [
